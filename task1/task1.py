@@ -17,5 +17,12 @@ Expected Output Example (post_id=1):
 
 Your implementation below:
 """
-
+import requests
 # Your implementation here
+def get_post_data(post_id):
+ r = requests.get(f"https://jsonplaceholder.typicode.com/posts/{post_id}")
+ data = r.json()
+ return data
+
+print(get_post_data(5))
+
