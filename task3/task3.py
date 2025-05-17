@@ -1,4 +1,6 @@
 """
+https://jsonplaceholder.typicode.com/posts")
+   data=(r.title,r.body,r.user_id, r.json())
 Task 3: Create a POST Request Function
 
 Goal:
@@ -22,3 +24,14 @@ Your implementation below:
 """
 
 # Your implementation here
+import requests
+def create_post(title,body,user_id):
+   dct = {
+	  "title": "My Homework",
+	  "body": "I am learning requests!",
+	  "userId": 1,
+	  "id": 101
+   }
+   r=requests.post(f"https://jsonplaceholder.typicode.com/posts", json=dct)
+   return r.json()
+print(create_post("My Homework","I am learing requests!",2))
